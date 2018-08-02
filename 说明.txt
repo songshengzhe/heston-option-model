@@ -1,0 +1,29 @@
+
+该模型计算器为heston模型，共有五个参数，随机方程形式这里省略。
+
+
+校准参数的文件数据放在第二个工作表中（一般为worksheet-sheet1结构，放在sheet1中）
+
+xlsx文件格式形如call20180725.xlsx（切记是在第二个列表sheet1中）
+
+call和put的文件路径分别输在call option data file path(button to read)和put option data file path（button to read）后面文本框下，
+这两个按钮仅仅是读入文件，并不校准参数
+
+点击按钮call calibration和put calibration 开始校准参数，结束会有消耗时间弹窗，一般为10分钟左右。
+
+show call params和show put params显示校准后的参数，默认为0.0
+
+option_type 只支持call和put两种输入
+
+MC use calibration params按钮使用前要输入option_type
+
+生成call_model_result.csv记录call的模型和实际计算结果比较。
+生成put_model_result.csv记录put的模型和实际计算结果比较。
+
+生成portfolio_result.csv记录给出的投资组合的情况。
+生成timechange_result.xlsx观察标的变动和波动率变动后portfolio的变化。列为price行为vol
+
+在生成结果报告前一定要保证call和put的参数都有校准！
+
+
+读入的投资组合尽量是相同spot不同strike和expriy的，否则希腊字母可能失去意义。。
